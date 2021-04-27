@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://cd3vane:Passwords1234@cluster0.vp1y6.mongodb.net/Cluster0?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://cd3vane:Passwords1234@cluster0.vp1y6.mongodb.net/Cluster0?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
 }
