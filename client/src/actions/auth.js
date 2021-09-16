@@ -7,7 +7,8 @@ import {
     AUTH_ERROR,
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    LOGOUT
+    LOGOUT,
+    CLEAR_PROFILE
 } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
@@ -18,7 +19,7 @@ export const loadUser = () => async dispatch => {
     }
 
     try {
-        const res = await axios.get('api/auth');
+        const res = await axios.get('/api/auth');
 
         dispatch({
             type: USER_LOADED,
@@ -42,7 +43,7 @@ export const register = ({ name, email, password }) => async dispatch => {
     const body = JSON.stringify({ name, email, password });
 
     try {
-        const res = await axios.post('api/users', body, config);
+        const res = await axios.post('/api/users', body, config);
 
         dispatch({
             type: REGISTER_SUCCESS,
@@ -74,7 +75,7 @@ export const login = ( email, password ) => async dispatch => {
     const body = JSON.stringify({ email, password });
 
     try {
-        const res = await axios.post('api/auth/', body, config);
+        const res = await axios.post('/api/auth/', body, config);
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -97,5 +98,6 @@ export const login = ( email, password ) => async dispatch => {
 
 // Logout / Clear Profile
 export const logout = () => dispatch => {
+    dispatch({ type: CLEAR_PROFILE });
     dispatch({ type: LOGOUT });
 };
