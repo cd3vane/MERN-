@@ -1,6 +1,4 @@
-# MERN-social-media
-
-# DevConnector 2.0
+# MERN Social Media
 
 > Social network for developers
 
