@@ -6,6 +6,7 @@ import Landing from './components/layout/Landing';
 import Alert from './components/layout/Alert';
 import Login from './components/auth/Login';
 import CreateProfile from './components/profile-forms/CreateProfile';
+import PostForm from './components/posts/PostForm';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
@@ -15,6 +16,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import Posts from './components/posts/Posts';
+import Post from './components/post/Post';
 
 // Redux
 import { Provider } from 'react-redux';
@@ -66,6 +68,8 @@ const App = () => {
                 component={AddEducation}
               />
               <PrivateRoute exact path='/posts' component={Posts} />
+              <PrivateRoute exact path='/posts/:id' component={Post} />
+              <PrivateRoute exact path='/add-post' component={PostForm} />
             </Switch>
           </section>
         </Fragment>
